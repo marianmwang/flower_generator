@@ -26,14 +26,20 @@
             let x2 = document.getElementById('x2').value;
             let x3 = document.getElementById('x3').value;
 
-/*             for (var shape=1; shape<13; shape++) {
-                for (var color=0; color<=360; color++){
+            globals.drawFlower1(x1,x2,x3);
+            
+        }
+        function download_flower() {
+            let sfrom = parseInt(document.getElementById('sfrom').value);
+            let sto = parseInt(document.getElementById('sto').value);
+            let cfrom = parseInt(document.getElementById('cfrom').value);
+            let cto = parseInt(document.getElementById('cto').value);
+            for (var shape=sfrom; shape<sto; shape++) {
+                for (var color=cfrom; color<=cto; color++){
                     globals.drawFlower1(color,shape,shape);
                     globals.download_img(color,shape,shape);
                 }         
-            } */
-            globals.drawFlower1(x1,x2,x3);
-            
+            } 
         }
 
     </script>
@@ -46,6 +52,23 @@
         </div>
         <div class="slidecontainer"> Center
             <input type="range" min="1" max="13" value="11" class="slider" id="x3" onchange="javascript:update_flower()">
+        </div>
+        <br><br><br><br>
+        
+        <form action="/action_page.php">
+            Shape range<br>
+            <label for="sfrom">From:</label>
+            <input type="number" id="sfrom" name="sfrom" size="1"><br>
+            <label for="sto">To:</label>
+            <input type="number" id="sto" name="sto" size="2"><br><br>
+            Colour range<br>
+            <label for="cfrom">From:</label>
+            <input type="number" id="cfrom" name="cfrom" size="2"><br>
+            <label for="cto">To:</label>
+            <input type="number" id="cto" name="cto" size="2"><br><br>
+          </form>
+        <div class="buttoncontainer">
+            <button type="button" onclick="javascript:download_flower()">Download</button>
         </div>
     </div>
     <div style="float:center;width:80%" style="position: relative; left: 0; top: 0; display: grid; height: 100%;">
