@@ -28,7 +28,8 @@ function drawFlower1(petalColor, petalShape, circleShape) {
   var rgb_color = xyzToRgb(labToXyz([l_val, a_val, b_val]));
   //alert(rgb_color);
 
-  pcolor = petalColor;
+  colorRatio = petalColor / 2;
+  pcolor = 325 + colorRatio * 10;
   petalRatio = petalShape / petal_shape_max;
   npetals = Math.round(10 + petalRatio * petal_shape_max);
   petalSize1 = [100, 62 - 46 * petalRatio];
