@@ -6,7 +6,7 @@ paper.view.autoUpdate = true;
 window.globals = {};
 var scope = this;
 
-function drawFlower1(petalColor, petalShape, ringShape, circleColor) {
+function drawFlower1(petalColor, petalShape, ringShape) {
   scope.activate();
   project.activeLayer.removeChildren();
 

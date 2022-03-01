@@ -8,14 +8,13 @@ paper.view.autoUpdate = true;
 window.globals = {};
 //var scope = this;
 
-function drawFlower1(petalColor, petalShape, circleShape) {
+function drawFlower1(petalColor, petalShape, ringShape) {
   //scope.activate();
   project.activeLayer.removeChildren();
 
   var xoff = 200;
   var yoff = 200;
 
-  ringShape = 4.5;
   circleColor = 4.5;
   petal_shape_max = 11;
 
@@ -28,11 +27,11 @@ function drawFlower1(petalColor, petalShape, circleShape) {
   var rgb_color = xyzToRgb(labToXyz([l_val, a_val, b_val]));
   //alert(rgb_color);
 
-  colorRatio = petalColor;
-  pcolor = 325 + colorRatio * 2;
-  petalRatio = petalShape / petal_shape_max;
-  npetals = Math.round(10 + petalRatio * petal_shape_max);
-  petalSize1 = [100, 62 - 46 * petalRatio];
+  // colorRatio = petalColor;
+  // pcolor = 325 + colorRatio * 2;
+  // petalRatio = petalShape / petal_shape_max;
+  // npetals = Math.round(10 + petalRatio * petal_shape_max);
+  // petalSize1 = [100, 62 - 46 * petalRatio];
 
   // green leaves
   nleaves = 50;
@@ -49,6 +48,12 @@ function drawFlower1(petalColor, petalShape, circleShape) {
     leaf.flatten(5);
   }
 
+  colorRatio = petalColor / 9;
+  pcolor = 325 + colorRatio * 10;
+  petalRatio = petalShape / 9;
+  npetals = Math.round(11 + petalRatio * 9);
+  petalSize1 = [100, 30 - 15 * petalRatio];
+  petalSize2 = [75, 15 - 7 * petalRatio];
   // larger petals
   for (var x = 0; x < npetals; x++) {
     var ang = x * (360 / npetals) + (6 * Math.random() - 3);
@@ -74,11 +79,9 @@ function drawFlower1(petalColor, petalShape, circleShape) {
   }
 
   // smaller petals
-  petalSize2 = [75, 6.15 + 1.85 * petalShape];
-  nspetals = Math.round(5 + petalShape * petal_shape_max);
-  for (var x = 0; x < nspetals; x++) {
+  for (var x = 0; x < npetals; x++) {
     var ang =
-      x * (360 / nspetals) + 360 / (nspetals * 2) + (6 * Math.random() - 3);
+      x * (360 / npetals) + 360 / (npetals * 2) + (6 * Math.random() - 3);
     var cx = xoff + 25 * Math.cos((ang * Math.PI) / 180);
     var cy = yoff + 25 * Math.sin((ang * Math.PI) / 180);
     var petal = new Path.Ellipse({
@@ -90,14 +93,8 @@ function drawFlower1(petalColor, petalShape, circleShape) {
       shadowBlur: 8,
       shadowOffset: new Point(0, 0),
     });
-    if (pcolor == 0) {
-      petal.fillColor.saturation = 0;
-      petal.fillColor.brightness = 50;
-    } else {
-      petal.fillColor.red = rgb_color[0];
-      petal.fillColor.green = rgb_color[1];
-      petal.fillColor.blue = rgb_color[2];
-    }
+    petal.fillColor.hue = pcolor + 5 * Math.random() - 2.5;
+    petal.fillColor.brightness -= 0.1 * Math.random() - 0.05;
     new Path.Ellipse({
       center: [cx, cy],
       size: [50, 2],
@@ -126,22 +123,16 @@ function drawFlower1(petalColor, petalShape, circleShape) {
   }
 
   // inner circle
-  var circleSize = 3.3 + (21.7 * circleShape) / 13;
-
-  var circleRatio = circleColor / 13;
+  var circleRatio = circleColor / 9;
   var icircle = new Path();
   icircle.fillColor = new Color(104 / 255, 50 / 255, 14 / 255);
   icircle.fillColor.hue += circleRatio * 35;
   for (var x = 0; x < 100; x++) {
     var ang = x * (360 / 60);
     var cx =
-      xoff +
-      circleSize * Math.cos((ang * Math.PI) / 180) +
-      (1 * Math.random() - 0.5);
+      xoff + 18 * Math.cos((ang * Math.PI) / 180) + (1 * Math.random() - 0.5);
     var cy =
-      yoff +
-      circleSize * Math.sin((ang * Math.PI) / 180) +
-      (1 * Math.random() - 0.5);
+      yoff + 18 * Math.sin((ang * Math.PI) / 180) + (1 * Math.random() - 0.5);
     icircle.add(new Point(cx, cy));
   }
   icircle.closePath();
