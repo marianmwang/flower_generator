@@ -32,6 +32,22 @@ function drawFlower1(petalColor, petalShape, circleShape) {
   petalRatio = petalShape / petal_shape_max;
   npetals = Math.round(5 + petalRatio * petal_shape_max);
   petalSize1 = [100, 62 - 46 * petalRatio];
+
+  // green leaves
+  nleaves = 50;
+  for (var x=0;x<nleaves;x++){
+      var ang = x*(360/nleaves)+(6*Math.random()-3);
+      var cx = xoff+50*Math.cos(ang*Math.PI/180);
+      var cy = yoff+50*Math.sin(ang*Math.PI/180);
+      var leaf = new Path.Ellipse({
+          center: [cx,cy],
+          size: [90,8],
+          fillColor: 'green',
+          rotation: ang,
+      });
+      leaf.flatten(5);
+  }
+
   // larger petals
   for (var x = 0; x < npetals; x++) {
     var ang = x * (360 / npetals) + (6 * Math.random() - 3);
