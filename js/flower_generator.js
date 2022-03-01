@@ -80,7 +80,7 @@ function drawFlower1(petalColor, petalShape, circleShape) {
 
   // smaller petals
   petalSize2 = [75, 6.15 + 1.85 * petalShape];
-  nspetals = Math.round(5 + petalShape);
+  nspetals = Math.round(5 + petalShape * petal_shape_max);
   for (var x = 0; x < nspetals; x++) {
     var ang =
       x * (360 / nspetals) + 360 / (nspetals * 2) + (6 * Math.random() - 3);
