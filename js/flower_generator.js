@@ -16,7 +16,7 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   var yoff = 200;
 
   circleColor = 4.5;
-  petal_shape_max = 11;
+  petal_shape_max = 2;
 
   // calculate color
   //alert(petalColor);
@@ -44,8 +44,8 @@ function drawFlower1(petalColor, petalShape, ringShape) {
 
   colorRatio = petalColor / 11;
   pcolor = 325 + colorRatio * 12;
-  petalRatio = petalShape / 11;
-  npetals = Math.round(8 + petalRatio * 11);
+  petalRatio = petalShape / 2;
+  npetals = Math.round(5 + petalRatio * 10);
   petalSize1 = [100, 30 - 15 * petalRatio];
   petalSize2 = [75, 15 - 7 * petalRatio];
   // larger petals
