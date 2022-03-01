@@ -30,7 +30,7 @@ function drawFlower1(petalColor, petalShape, circleShape) {
 
   pcolor = petalColor;
   petalRatio = petalShape / petal_shape_max;
-  npetals = Math.round(5 + petalRatio * petal_shape_max);
+  npetals = Math.round(10 + petalRatio * petal_shape_max);
   petalSize1 = [100, 62 - 46 * petalRatio];
 
   // green leaves
