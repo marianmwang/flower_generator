@@ -27,12 +27,6 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   var rgb_color = xyzToRgb(labToXyz([l_val, a_val, b_val]));
   //alert(rgb_color);
 
-  // colorRatio = petalColor;
-  // pcolor = 325 + colorRatio * 2;
-  // petalRatio = petalShape / petal_shape_max;
-  // npetals = Math.round(10 + petalRatio * petal_shape_max);
-  // petalSize1 = [100, 62 - 46 * petalRatio];
-
   // green leaves
   nleaves = 50;
   for (var x = 0; x < nleaves; x++) {
@@ -48,10 +42,10 @@ function drawFlower1(petalColor, petalShape, ringShape) {
     leaf.flatten(5);
   }
 
-  colorRatio = petalColor / 9;
-  pcolor = 325 + colorRatio * 10;
-  petalRatio = petalShape / 9;
-  npetals = Math.round(11 + petalRatio * 9);
+  colorRatio = petalColor / 11;
+  pcolor = 325 + colorRatio * 12;
+  petalRatio = petalShape / 11;
+  npetals = Math.round(8 + petalRatio * 11);
   petalSize1 = [100, 30 - 15 * petalRatio];
   petalSize2 = [75, 15 - 7 * petalRatio];
   // larger petals
