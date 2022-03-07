@@ -156,11 +156,11 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   //paper.view.element.toBlob(function(blob) { saveAs(blob, "image.png");});
 }
 
-function download_img(petalColor, petalShape, circleShape) {
+function download_img(petalColor, petalShape, ringShape) {
   var link = document.createElement("a");
   link.href = paper.view.element.toDataURL();
   link.download =
-    "flower1_c" + petalColor + "s" + petalShape + circleShape + ".png";
+    "flower1_c" + petalColor + "s" + petalShape + ringShape + ".png";
   link.click();
 }
 
