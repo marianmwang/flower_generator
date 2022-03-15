@@ -156,7 +156,7 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   //paper.view.element.toBlob(function(blob) { saveAs(blob, "image.png");});
 }
 
-async function download_img(petalColor, petalShape, ringShape) {
+function download_img(petalColor, petalShape, ringShape) {
   var link = document.createElement("a");
   link.href = paper.view.element.toDataURL();
   console.log("ring: " + ringShape + "color: " + petalColor + "petals: " + petalShape);
