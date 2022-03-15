@@ -42,7 +42,7 @@ function drawFlower1(petalColor, petalShape, ringShape) {
     leaf.flatten(5);
   }
 
-  colorRatio = petalColor / 11;
+  colorRatio = petalColor / 9;
   pcolor = 325 + colorRatio * 12;
   petalRatio = petalShape / 2;
   npetals = Math.round(5 + petalRatio * 10);
@@ -98,7 +98,7 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   }
 
   // inner ring
-  var ringRatio = ringShape / 11;
+  var ringRatio = ringShape / 9;
   var nring = Math.round(15 + 30 * ringRatio);
   var ringSize = [35, 15 - 12 * ringRatio];
   var rcolor = new Color(225 / 255, 229 / 255, 20 / 255, 0.95);
