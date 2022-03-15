@@ -160,7 +160,7 @@ function download_img(petalColor, petalShape, ringShape) {
   var link = document.createElement("a");
   link.href = paper.view.element.toDataURL();
   link.download =
-    "flower1_c" + petalColor + "s" + petalShape + ringShape + ".png";
+    "flower1_c" + petalColor + "r" + ringShape + "s" + petalShape + ".png";
   link.click();
 }
 

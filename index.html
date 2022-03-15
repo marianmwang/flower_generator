@@ -36,7 +36,7 @@
           let cfrom = parseInt(document.getElementById("cfrom").value);
           let cto = parseInt(document.getElementById("cto").value);
           for (var shape = sfrom; shape < sto; shape++) {
-            for (var color = cfrom; color <= cto; color++) {
+            for (var color = cfrom; color < cto; color++) {
               globals.drawFlower1(color, 1, shape);
               globals.download_img(color, 1, shape);
               globals.drawFlower1(color, 2, shape);
