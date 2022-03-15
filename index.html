@@ -38,10 +38,14 @@
           for (var shape = sfrom; shape < sto; shape++) {
             for (var color = cfrom; color < cto; color++) {
               console.log("shape: " + shape + "color: " + color);
-              globals.drawFlower1(color, 1, shape);
-              globals.download_img(color, 1, shape);
-              globals.drawFlower1(color, 2, shape);
-              globals.download_img(color, 2, shape);
+              setTimeout(function () {
+                globals.drawFlower1(color, 1, shape);
+                globals.download_img(color, 1, shape);
+              }, 200);
+              setTimeout(function () {
+                globals.drawFlower1(color, 2, shape);
+                globals.download_img(color, 2, shape);
+              }, 200);
             }
           }
         }
