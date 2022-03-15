@@ -100,9 +100,9 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   // inner ring
   var ringRatio = ringShape / 9;
   var nring = Math.round(15 + 30 * ringRatio);
-  var ringSize = [35, 15 - 10 * ringRatio];
+  var ringSize = [35, 15 - 12 * ringRatio];
   var rcolor = new Color(225 / 255, 229 / 255, 20 / 255, 0.95);
-  for (var x = 0; x < nring; x++) {
+  for (var x = 1; x < nring + 1; x++) {
     var ang = x * (360 / nring);
     var cx =
       xoff + 15 * Math.cos((ang * Math.PI) / 180) + (1 * Math.random() - 0.5);
