@@ -98,9 +98,9 @@ function drawFlower1(petalColor, petalShape, ringShape) {
   }
 
   // inner ring
-  var ringRatio = ringShape / 9;
-  var nring = Math.round(15 + 50 * ringRatio);
-  var ringSize = [35, 100 - 12 * ringRatio];
+  var ringRatio = ringShape / 11;
+  var nring = Math.round(15 + 30 * ringRatio);
+  var ringSize = [35, 15 - 12 * ringRatio];
   var rcolor = new Color(225 / 255, 229 / 255, 20 / 255, 0.95);
   for (var x = 0; x < nring; x++) {
     var ang = x * (360 / nring);
