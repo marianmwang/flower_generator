@@ -35,12 +35,12 @@
           let sto = parseInt(document.getElementById("sto").value);
           let cfrom = parseInt(document.getElementById("cfrom").value);
           let cto = parseInt(document.getElementById("cto").value);
-          for (var shape = sfrom; shape < sto; shape++) {
-            for (var color = sfrom; color < sto; color++) {
+          for (var shape = 1; shape < 12; shape++) {
+            for (var color = 1; color < 12; color++) {
               globals.drawFlower1(color, 1, shape);
               globals.download_img(color, 1, shape);
               globals.drawFlower1(color, 2, shape);
-              globals.download_img(color, 2, shape);
+              globals.download_img(color, 2, shape);              
             }
           }
         }
