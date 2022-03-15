@@ -30,7 +30,8 @@
 
           globals.drawFlower1(x1, x2, x3);
           globals.download_img(color, 1, shape);
-          globals.download_img(color, 1, shape);
+          globals.drawFlower1(color, 2, shape);
+          globals.download_img(color, 2, shape);
         }
         function download_flower() {
           let sfrom = parseInt(document.getElementById("sfrom").value);
@@ -42,7 +43,7 @@
               globals.drawFlower1(color, 1, shape);
               globals.download_img(color, 1, shape);
               globals.drawFlower1(color, 2, shape);
-              globals.download_img(color, 1, shape);             
+              globals.download_img(color, 2, shape);
             }
           }
         }
@@ -101,11 +102,6 @@
         <div class="buttoncontainer">
           <button type="button" onclick="javascript:download_flower()">
             Download
-          </button>
-        </div>
-        <div class="buttoncontainer">
-          <button type="button" onclick="javascript:download_one_flower()">
-            Download One
           </button>
         </div>
       </div>
