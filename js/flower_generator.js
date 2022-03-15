@@ -159,6 +159,7 @@ function drawFlower1(petalColor, petalShape, ringShape) {
 function download_img(petalColor, petalShape, ringShape) {
   var link = document.createElement("a");
   link.href = paper.view.element.toDataURL();
+  console.log("ring shape: " + ringShape + "color: " + petalColor);
   link.download =
     "flower1_c" + petalColor + "r" + ringShape + "s" + petalShape + ".png";
   link.click();
