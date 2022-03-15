@@ -38,9 +38,9 @@
           for (var shape = 1; shape < 12; shape++) {
             for (var color = 1; color < 12; color++) {
               globals.drawFlower1(color, 1, shape);
-              globals.download_img(color, 1, shape);
+              await(globals.download_img(color, 1, shape));
               globals.drawFlower1(color, 2, shape);
-              globals.download_img(color, 2, shape);              
+              await(globals.download_img(color, 2, shape));              
             }
           }
         }
